@@ -1,0 +1,2049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="34396212-aebe-4f2d-9e60-519209d194bf" created="3.44.1" activeEnvironment="Default environment" name="Project 1" projectVersion="" updated="3.45.0 2023-04-03T14:41:27Z" encryptionMode="Not encrypted" resourceRoot="" abortOnError="false" runType="SEQUENTIAL" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="da6f3603-d372-427c-93ae-c02df858b9ae" wsaVersion="NONE" name="CalculatorSoap12" type="wsdl" bindingName="{http://tempuri.org/}CalculatorSoap12" soapVersion="1_2" anonymous="optional" definition="http://www.dneonline.com/calculator.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://www.dneonline.com/calculator.asmx?wsdl">
+      <con:part>
+        <con:url>http://www.dneonline.com/calculator.asmx?wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subtract">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubtractResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Multiply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplyResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Divide">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DivideResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add"/>
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapIn">
+    <wsdl:part name="parameters" element="tns:Subtract"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractResponse"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapIn">
+    <wsdl:part name="parameters" element="tns:Multiply"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapIn">
+    <wsdl:part name="parameters" element="tns:Divide"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapOut">
+    <wsdl:part name="parameters" element="tns:DivideResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorSoap">
+    <wsdl:operation name="Add">
+      <wsdl:documentation>Adds two integers. This is a test WebService. ©DNE Online</wsdl:documentation>
+      <wsdl:input message="tns:AddSoapIn"/>
+      <wsdl:output message="tns:AddSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input message="tns:SubtractSoapIn"/>
+      <wsdl:output message="tns:SubtractSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input message="tns:MultiplySoapIn"/>
+      <wsdl:output message="tns:MultiplySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input message="tns:DivideSoapIn"/>
+      <wsdl:output message="tns:DivideSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoap" type="tns:CalculatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculatorSoap12" type="tns:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port name="CalculatorSoap" binding="tns:CalculatorSoap">
+      <soap:address location="http://www.dneonline.com/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12" binding="tns:CalculatorSoap12">
+      <soap12:address location="http://www.dneonline.com/calculator.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint>
+    </con:endpoints>
+    <con:operation id="fe8c53b9-89ad-4fdb-b2cc-ef88e6fa90c5" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="3ccbdfd4-1b37-44fa-a0c0-9f44c65780d4" isOneWay="false" action="http://tempuri.org/Divide" name="Divide" bindingOperationName="Divide" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="b11f4172-1d7d-4f89-a2d4-12651e4573d5" isOneWay="false" action="http://tempuri.org/Multiply" name="Multiply" bindingOperationName="Multiply" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="99637dd5-20d3-4133-9597-664abb092150" isOneWay="false" action="http://tempuri.org/Subtract" name="Subtract" bindingOperationName="Subtract" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+  </con:interface>
+  <con:interface xsi:type="con:WsdlInterface" id="5f8a9b45-a5cd-402c-b1d1-286e5451755b" wsaVersion="NONE" name="CalculatorSoap" type="wsdl" bindingName="{http://tempuri.org/}CalculatorSoap" soapVersion="1_1" anonymous="optional" definition="http://www.dneonline.com/calculator.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints>
+      <con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint>
+    </con:endpoints>
+    <con:operation id="d895ad67-1031-4f40-bc35-f59d64da3454" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="64a20d4e-ca30-4481-a2e1-ffe25ee2327e" isOneWay="false" action="http://tempuri.org/Divide" name="Divide" bindingOperationName="Divide" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="d03d207f-39c1-4f59-aff3-7f59a623988c" isOneWay="false" action="http://tempuri.org/Multiply" name="Multiply" bindingOperationName="Multiply" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+    <con:operation id="92ebc216-5899-4d2e-8102-5496a632945a" isOneWay="false" action="http://tempuri.org/Subtract" name="Subtract" bindingOperationName="Subtract" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false">
+      <con:settings/>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="04eb1e97-92ec-4701-a7bb-f84d3a7634bf" name="Test Suite 1">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="6f6179b3-6aba-41c6-a2f4-d990dec7b1f5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:testStep type="groovy" name="Groovy Script2" id="34dbc6d5-226a-4257-87fb-8d3dcfca3ef9">
+        <con:settings/>
+        <con:config>
+          <script>import jxl.*
+import jxl.write.*
+
+WritableWorkbook workbook = Workbook.createWorkbook(new File("C:\\Users\\91953\\OneDrive\\Documents\\testdata2.xls"))
+
+WritableSheet sheet = workbook.createSheet("testdata2", 0)
+//log.info(sheet1.isHidden())
+Label label = new Label(0, 0, "Name"); //column=0=A,row=0=1
+sheet.addCell(label);
+Label label1 = new Label(1, 0, "Index");
+sheet.addCell(label1);
+def list=["asha","arjun","amir","raj","Simran","geetha"]
+def r=1
+list.eachWithIndex{it,index->
+    //println "value " + it + " at index " +index
+    Label label3=new Label(0,r,it)
+    sheet.addCell(label3)
+    Label label4=new Label(1,r,"hello")
+    sheet.addCell(label4)
+    log.info(it)
+    log.info(index)
+    r=r+1
+}
+workbook.write()
+workbook.close()</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="properties" name="Properties" id="1451f69b-6c42-46c1-9b02-a169f47640b6">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>Name</con:name>
+              <con:value>Asha</con:value>
+            </con:property>
+            <con:property>
+              <con:name>number2</con:name>
+              <con:value>10</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasource" name="Data Source" id="642f5d65-dcda-4045-9282-31bb579b0eb8">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>C:/Users/91953/OneDrive/Documents/testdata2.xls</file>
+              <worksheet/>
+              <cell>A2</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>intA</con:property>
+          <con:property>intB</con:property>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="request" id="a3f09c3b-b3ee-491c-b469-79e45abe2307" name="SOAP Request">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>CalculatorSoap12</con:interface>
+          <con:operation>Add</con:operation>
+          <con:request name="SOAP Request" id="c0b966b6-e71b-4c67-b60b-ece4528be048">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://www.dneonline.com/calculator.asmx</con:endpoint>
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Add>
+         <tem:intA>${Data Source#intA}</tem:intA>
+         <tem:intB>${Data Source#intB}</tem:intB>
+      </tem:Add>
+   </soap:Body>
+</soap:Envelope>]]></con:request>
+            <con:assertion type="Valid HTTP Status Codes" id="6783149c-3b47-4a2b-b6b2-a782c7a6becf" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="ea2e50e5-177d-419e-93d4-93915d3d9117" name="Response SLA">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="60bd5e4d-5f98-4a7f-b128-dc9368e44944" name="Not SOAP Fault"/>
+            <con:assertion type="Schema Compliance" id="a4e8f1ae-c1d1-4110-a2bb-8166d9e9f22d" name="Schema Compliance">
+              <con:configuration/>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:wsaConfig action="http://tempuri.org/CalculatorSoap/AddRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datagen" name="DataGen" id="ba8d0813-a551-4b5d-8091-942ac7224c64">
+        <con:settings/>
+        <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:property type="Number">
+            <con:configuration>
+              <start>11001</start>
+              <end>1999</end>
+              <step/>
+              <pattern/>
+              <random>true</random>
+              <persist>false</persist>
+            </con:configuration>
+            <con:name>number1</con:name>
+            <con:mode>STEP</con:mode>
+            <con:shared>true</con:shared>
+          </con:property>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasource" name="Data Source 2" id="2ccd93ce-a17c-4521-a8ce-4cff543a42a3">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Data Generator">
+            <con:configuration>
+              <generatedDataCount>10</generatedDataCount>
+              <generatorsTotalNumber>1</generatorsTotalNumber>
+              <lastSelectedProperty>0</lastSelectedProperty>
+              <GeneratorType0>INT</GeneratorType0>
+              <PropertyName0>number</PropertyName0>
+              <repetitionCountnumber>0</repetitionCountnumber>
+              <repeatValuesnumber>false</repeatValuesnumber>
+              <IntegerDataGeneratorMinValuenumber>0</IntegerDataGeneratorMinValuenumber>
+              <IntegerDataGeneratorMaxValuenumber>102</IntegerDataGeneratorMaxValuenumber>
+              <IntegerDataGeneratorStepValuenumber>1</IntegerDataGeneratorStepValuenumber>
+              <IntegerDataGeneratorConsequentValuesnumber>false</IntegerDataGeneratorConsequentValuesnumber>
+              <escapeSpaceSequence/>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>number</con:property>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script 3" id="640081d9-663f-4e72-a6cd-f40b1cdeef65">
+        <con:settings/>
+        <con:config>
+          <script>import com.mongodb.MongoClientURI
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClient
+import com.mongodb.client.MongoClients
+import com.mongodb.MongoClientSettings
+import com.mongodb.client.MongoDatabase
+import com.mongodb.BasicDBObject
+import org.bson.Document
+import org.bson.*
+import com.mongodb.*
+import static com.mongodb.client.model.Filters.eq;
+import java.time.LocalDateTime;
+import java.text.SimpleDateFormat
+import java.text.DateFormat
+import java.time.*
+import com.gmongo.GMongoClient
+import com.mongodb.MongoCredential
+import com.mongodb.ServerAddress
+import com.mongodb.client.model.Projections
+
+MongoClientURI uri = new MongoClientURI(
+"mongodb+srv://snaga1725:FYnhDxDydlu6ns1f@cluster0.vigjens.mongodb.net/test");
+MongoClient mongoClient = new MongoClient(uri);
+MongoDatabase db = mongoClient.getDatabase("first");
+def collection = db.getCollection('cityinfo')
+log.info("collect is"+collection.toString())
+BasicDBObject query = new BasicDBObject("state":"MA")
+//log.info(collection.find().toString())
+log.info(collection.find().first())
+def String value="BERLI"
+for(def int i=1;i&lt;5;i++){
+log.info("value is "+value)
+Document myDoc = collection.find(eq("city",value,"state","MA")).first();
+log.info myDoc.toString();
+if(myDoc==null)
+{
+log.info(	"no doc recieved")
+value="BERLIN"
+}
+else
+{
+log.info myDoc.toJson()
+def projectionTest = collection.find(query).projection(Projections.fields(Projections.include("city", "state"), Projections.excludeId()))
+log.info("projection value"+projectionTest);
+def cursor = projectionTest.iterator()
+def count = 0
+def testNumber = 2
+log.info(cursor.next().toString())
+
+
+
+
+}
+}</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasource" name="Data Source2" id="0d54cd7d-afd5-4f43-a2e6-284d56101102">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="JDBC">
+            <con:configuration>
+              <driver>mongodb.jdbc.MongoDriver</driver>
+              <connstr>mongodb+srv://snaga1725:FYnhDxDydlu6ns1f@cluster0.vigjens.mongodb.net/test?authMechanism=DEFAULT</connstr>
+              <pass/>
+              <Connection>mongo( Default environment )</Connection>
+              <query>--Add an SQL query (click the Create Query button below or enter a query manually)</query>
+              <fetchSize/>
+              <stored-procedure>false</stored-procedure>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>callLetter</con:property>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="71618038-65e0-4d11-86c2-5058c353b00a">
+        <con:settings/>
+        <con:config>
+          <script>def counter=context.expand('${DataGen#number1}') 
+log.info("counter value"+counter) 
+println("counter value"+counter)
+
+def name1=testRunner.testCase.testSteps["Properties"].getPropertyValue("Name")
+log.info("name is"+name1)
+def number2=testRunner.testCase.testSteps["Properties"].getPropertyValue("number2")
+log.info("number is"+number2)
+def number3=20
+testRunner.testCase.testSteps["Properties"].setPropertyValue( "Name", "Asha" )
+def name3=context.expand('${Properties#Name}') 
+log.info("new name 2 is"+name3)</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasink" name="Data Sink" id="5b86e440-5fa7-4404-9b21-3de90fe6e266">
+        <con:settings/>
+        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSink type="Excel">
+            <con:configuration>
+              <file/>
+              <outfile>C:/Users/91953/OneDrive/Documents/testdata2.xls</outfile>
+              <worksheet>testdata2</worksheet>
+              <cell>C2</cell>
+              <evaluateFormulas>false</evaluateFormulas>
+              <append>false</append>
+            </con:configuration>
+          </con:dataSink>
+          <con:properties>
+            <con:property>
+              <con:name>Result</con:name>
+              <con:value>${SOAP Request#Response#declare namespace ns1='http://tempuri.org/'; //ns1:AddResponse[1]/ns1:AddResult[1]}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>Number</con:name>
+              <con:value>${DataGen#number1}</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="Data Source Loop" id="61177764-f7a8-45cc-9879-1012261891a7">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>Data Source</dataSourceStep>
+          <targetStep>SOAP Request</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script5" id="4f5ec38a-473b-4380-8fa6-592751634d9b">
+        <con:settings/>
+        <con:config>
+          <script>import groovy.json.*
+import groovy.json.JsonSlurper.*
+import java.util.Iterator;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import jxl.*
+import jxl.write.*
+
+WritableWorkbook workbook = Workbook.getWorkbook(new File("C:\\Users\\91953\\OneDrive\\Documents\\ResponseOutput.xls"))
+WritableSheet sheet = workbook.createSheet("Sheet2", 0)
+Label label1=new Label(0,0,"emp_no")
+Label label2=new Label(1,0,"totalhours")
+Label label3=new Label(2,0,"totalAmount")
+Label label4=new Label(3,0,"paid_totalHour")
+Label label5=new Label(4,0,"paid_totalAmount")
+Label label6=new Label(5,0,"paid_equipment")
+Label label7=new Label(6,0,"paid_seqNo")
+Label label8=new Label(7,0,"paid_premiumPayHHMM")
+Label label9=new Label(8,0,"paid_legDollarValue")
+Label label10=new Label(9,0,"paid_flightNumber")
+Label label11=new Label(10,0,"unpaid_totalHour")
+Label label12=new Label(11,0,"unpaid_totalAmount")
+Label label13=new Label(12,0,"unpaid_equipment")
+Label label14=new Label(13,0,"unpaid_seqNo")
+Label label15=new Label(14,0,"unpaid_premiumPayHHMM")
+Label label16=new Label(15,0,"unpaid_legDollarValue")
+Label label17=new Label(16,0,"unpaid_flightNumber")
+sheet.addCell(label1)
+sheet.addCell(label2)
+sheet.addCell(label3)
+sheet.addCell(label4)
+sheet.addCell(label5)
+sheet.addCell(label6)
+sheet.addCell(label7)
+sheet.addCell(label8)
+sheet.addCell(label9)
+sheet.addCell(label10)
+sheet.addCell(label11)
+sheet.addCell(label12)
+sheet.addCell(label13)
+sheet.addCell(label14)
+sheet.addCell(label15)
+sheet.addCell(label16)
+sheet.addCell(label17)
+File jsonfile = new File('C:/Users/91953/OneDrive/Documents/Naz/dataResponse.json');
+
+//return jsonfile.text;
+r=1
+def jsonres = new JsonSlurper().parseText(jsonfile.text) 
+
+//log.info(jsonres.monthCreditSummary.items.payCode)
+def emp_no=jsonres.crewMember.crewMemKey.employeeNumber.get(0)
+def totalhours=jsonres.totalPremiumPayMins.get(0)
+def totalAmount=jsonres.totalPremiumPayHHMM.get(0)
+Label label01=new Label(0,r,emp_no.toString())
+sheet.addCell(label01)
+Label label02=new Label(1,r,totalhours.toString())
+sheet.addCell(label02)
+Label label03=new Label(2,r,totalAmount.toString())
+sheet.addCell(label03)
+log.info("emp_no is :"+emp_no + ", totalhours "+totalhours+" ,totalAmount "+totalAmount)
+def lst=jsonres.crewMember.monthlyActivity.sequences
+
+//log.info(lst.size())
+
+def list2=lst.get(0)
+log.info(list2.size())
+log.info("list2 is :"+list2)
+
+for(int i=0;i&lt;list2.size();i++)
+{
+	//log.info list2.get(i)
+	def list3=list2.get(i)
+	log.info("list3 :"+list3)
+	
+	log.info("list3 size :"+list3.size())
+	for(int j=0;j&lt;list3.size();j++)
+	{
+	def paid_totalHour=list3.paid.premiumPayHHMM.get(0)
+	def paid_totalAmount=list3.paid.seqDollarValue.get(0)
+	def paid_equipment=list3.paid.sequence.equipment.get(0)
+	def paid_seqNo=list3.paid.sequence.seqKey.sequenceNumber.get(0)
+	log.info(	"paid_seqNo"+paid_seqNo+", paid_totalHour"+paid_totalHour +",paid_totalAmount"+paid_totalAmount+",paid_equipment"+paid_equipment)
+	Label label04=new Label(3,r,paid_totalHour.toString())
+	sheet.addCell(label04)
+	Label label05=new Label(4,r,paid_totalAmount.toString())
+	sheet.addCell(label05)
+	Label label06=new Label(5,r,paid_equipment.toString())
+	sheet.addCell(label06)
+	Label label07=new Label(6,r,paid_seqNo.toString())
+	sheet.addCell(label07)
+	//r++
+
+		def unpaid_totalHour=list3.unpaid.premiumPayHHMM.get(0)
+	def unpaid_totalAmount=list3.unpaid.seqDollarValue.get(0)
+	def unpaid_equipment=list3.unpaid.sequence.equipment.get(0)
+	def unpaid_seqNo=list3.unpaid.sequence.seqKey.sequenceNumber.get(0)
+	log.info("unpaid_seqNo"+	unpaid_seqNo+", unpaid_totalHour"+unpaid_totalHour +",unpaid_totalAmount"+unpaid_totalAmount+",unpaid_equipment"+unpaid_equipment)
+	
+		Label label011=new Label(10,r,unpaid_totalHour.toString())
+		sheet.addCell(label011)
+		Label label012=new Label(11,r,unpaid_totalAmount.toString())
+		sheet.addCell(label012)
+		Label label013=new Label(12,r,unpaid_equipment.toString())
+		sheet.addCell(label013)
+		Label label014=new Label(13,r,unpaid_seqNo.toString())
+		sheet.addCell(label014)
+	    def list4=list3.paid.sequence.flightLegs.items.get(0)
+
+	log.info("list4 size is :"+list4.size())
+	log.info("list4 is :"+list4)
+	for(int k=0;k&lt;list4.size();k++)
+	{
+		def int q=r+k
+		def paid_premiumPayHHMM=list4.premiumPayHHMM.get(k)
+		def paid_legDollarValue=list4.legDollarValue.get(k)
+		def paid_flightNumber=list4.flightKey.flightNumber.get(k)
+		log.info(paid_premiumPayHHMM+", "+ paid_legDollarValue +" ,"+paid_flightNumber + "q value is :"+q)
+		Label label08=new Label(7,q,paid_premiumPayHHMM.toString())
+		sheet.addCell(label08)
+		Label label09=new Label(8,q,paid_legDollarValue.toString())
+		sheet.addCell(label09)
+		Label label010=new Label(9,q,paid_flightNumber.toString())
+		sheet.addCell(label010)
+	}
+	
+
+		
+	def list5=list3.unpaid.sequence.flightLegs.items.get(0)
+	log.info("list5 size is :"+list5.size())
+	log.info("list5 is :"+list5)
+	for(int l=0;l&lt;list5.size();l++)
+	{
+		def s=r+l
+		def unpaid_premiumPayHHMM=list5.premiumPayHHMM.get(l)
+		def unpaid_legDollarValue=list5.legDollarValue.get(l)
+		def unpaid_flightNumber=list5.flightKey.flightNumber.get(l)
+		log.info(unpaid_premiumPayHHMM+", "+ unpaid_legDollarValue +" ,"+unpaid_flightNumber+ "s value is :"+s)
+		Label label015=new Label(14,s,unpaid_premiumPayHHMM.toString())
+		sheet.addCell(label015)
+		Label label016=new Label(15,s,unpaid_legDollarValue.toString())
+		sheet.addCell(label016)
+		Label label017=new Label(16,s,unpaid_flightNumber.toString())
+		sheet.addCell(label017)
+		r=s
+	}
+	
+	}
+	r++
+}
+
+workbook.write()
+workbook.close()</script>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>Name</con:name>
+          <con:value>Suma</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Kusuma</con:name>
+          <con:value>Suma</con:value>
+        </con:property>
+      </con:properties>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="ddbd18be-fe14-4d16-8118-501a3cda5623" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 2" searchProperties="true" timeout="0" maxResults="0">
+      <con:settings/>
+      <con:testStep type="properties" name="Properties" id="1b586911-9fb7-4d55-8fff-611bdb82303d">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>counter</con:name>
+              <con:value>1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>transconMap</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>737</con:name>
+              <con:value>1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>747</con:name>
+              <con:value>1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>FLT_NO</con:name>
+              <con:value>940</con:value>
+            </con:property>
+            <con:property>
+              <con:name>SEQ_NO</con:name>
+              <con:value>757</con:value>
+            </con:property>
+            <con:property>
+              <con:name>LEG_SEQ</con:name>
+              <con:value>B772</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ACT_ACTUALTIME</con:name>
+              <con:value>8.13</con:value>
+            </con:property>
+            <con:property>
+              <con:name>SKB_SCDULETIME</con:name>
+              <con:value>8.27</con:value>
+            </con:property>
+            <con:property>
+              <con:name>actual_dollar</con:name>
+              <con:value>8.13</con:value>
+            </con:property>
+            <con:property>
+              <con:name>adjusted_dollar</con:name>
+              <con:value>8.27</con:value>
+            </con:property>
+            <con:property>
+              <con:name>757</con:name>
+              <con:value>1</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasource" name="Data Source" id="383039dd-c55f-4cfa-8cc1-66c41f22c506">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>C:/Users/91953/OneDrive/Documents/Naz/SQLDATA.xlsx</file>
+              <worksheet>Sheet1</worksheet>
+              <cell>A2</cell>
+              <ignoreEmpty>true</ignoreEmpty>
+              <evaluateFormulas>true</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>false</con:shared>
+          <con:restartShared>false</con:restartShared>
+          <con:preload>true</con:preload>
+          <con:property>EMP_NO</con:property>
+          <con:property>SEQ_NO</con:property>
+          <con:property>DOM_INTL_CDE</con:property>
+          <con:property>LEG_SEQ</con:property>
+          <con:property>ACT_ACTUALTIME</con:property>
+          <con:property>SKB_SCDULETIME</con:property>
+          <con:property>FLT_NO</con:property>
+          <con:property>DEPT_STA</con:property>
+          <con:property>ARRIV_STA</con:property>
+          <con:property>SCH_EQP</con:property>
+          <con:property>POS</con:property>
+          <con:property>PURSER</con:property>
+          <con:property>LEG_IPD_INDR</con:property>
+          <con:startRow>0</con:startRow>
+          <con:endRow/>
+          <con:recordsPerIteration>1</con:recordsPerIteration>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:trimValues>false</con:trimValues>
+          <con:entitizeValues>false</con:entitizeValues>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:expandProperties>false</con:expandProperties>
+          <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="3c16f75b-f35a-4d39-af5b-a1efe7be2f5f" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script><![CDATA[//def String sEQ_NO = context.expand( '${Data Source#SEQ_NO}' )
+def map2=[:]
+def HMCode
+def paycode
+def transcon
+def counter = context.expand('${Properties#counter}')
+log.info("counter is: "+ counter)
+
+if(counter.contains('0'))
+{
+	//log.info(sEQ_NO)
+map2=gettranscon()
+//log.info(map2)
+map2.each{entry->
+
+ log.info "$entry.key: $entry.value"
+ def String key=entry.key
+ def String value=entry.value
+ log.info(key +value)
+testRunner.testCase.testSteps["Properties"].setPropertyValue(key,value)
+}
+testRunner.testCase.testSteps["Properties"].setPropertyValue("counter","1")
+testRunner.testCase.getTestStepByName("Groovy Script").disabled = true
+context.testCase.getTestStepByName("Data Source").restart(testRunner, context)
+//testRunner.testCase.getTestStepByName("Groovy Script 4")
+
+}
+else
+{
+	testRunner.gotoStepByName("Groovy Script 4")
+}
+def Map gettranscon()
+{
+
+def list=[]
+def list2=[]
+def map=[:]
+def int tranpose
+context.testCase.getTestStepByName("Data Source").setStartRow("0")
+context.testCase.getTestStepByName("Data Source").repositionAtStartRow( testRunner, context)
+context.testCase.getTestStepByName("Data Source").next(testRunner,context)
+def rowCount = context.testCase.getTestStepByName("Data Source").rowCount
+log.info "rowCount-- " + rowCount
+for (def i = 0; i <rowCount-1 ; i++) {
+seq_no = context.testCase.getTestStepByName("Data Source").getPropertyValue("SEQ_NO")
+DEPT_STA = context.testCase.getTestStepByName("Data Source").getPropertyValue("DEPT_STA")
+ARRIV_STA = context.testCase.getTestStepByName("Data Source").getPropertyValue("ARRIV_STA")
+
+list<<seq_no
+list<<DEPT_STA
+list2<<seq_no
+list2<<ARRIV_STA
+
+context.testCase.getTestStepByName("Data Source").next(testRunner,context)
+currentRow = context.testCase.getTestStepByName("Data Source").getCurrentRow()
+
+}
+def count=0
+
+log.info list
+log.info list2
+log.info list.size()
+for(int j=0;j<list.size();j++)
+{
+	if(list[j].equals(list2[j])&& list[j+2].equals(list2[j+2]))
+	{
+	log.info("hello")
+	if(list[j+1].equals(list2[j+3])&& list[j+3].equals(list2[j+1]))
+	{
+		transpose=1
+		map.put(list[j],transpose)
+	}
+	else
+	{
+		transpose=0
+		map.put(list[j],transpose)
+	}
+	
+	}
+	j=j+3
+}
+log.info(map)
+	return map
+}]]></script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script 5" id="ca676797-b3bd-42d1-a06e-2dadf361b9e3">
+        <con:settings/>
+        <con:config>
+          <script>def rate='$14.5'
+String str;
+str = rate.replace('$','')
+log.info str.size()
+log.info str.trim()
+for( String values : str )
+{
+log.info(values);
+}</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script 4" id="71a94811-af87-4e07-a6b0-c59fda529879">
+        <con:settings/>
+        <con:config>
+          <script><![CDATA[def eMP_NO = context.expand( '${Data Source#EMP_NO}' )
+def String sEQ_NO = context.expand( '${Data Source#SEQ_NO}' )
+def dOM_INTL_CDE = context.expand( '${Data Source#DOM_INTL_CDE}' )
+def lEG_SEQ = context.expand( '${Data Source#LEG_SEQ}' )
+def aCT_ACTUALTIME = context.expand( '${Data Source#ACT_ACTUALTIME}' )
+def sKB_SCDULETIME = context.expand( '${Data Source#SKB_SCDULETIME}' )
+def fLT_NO = context.expand( '${Data Source#FLT_NO}' )
+def dEPT_STA = context.expand( '${Data Source#DEPT_STA}' )
+def aRRIV_STA = context.expand( '${Data Source#ARRIV_STA}' )
+def sCH_EQP = context.expand( '${Data Source#SCH_EQP}' )
+def pOS = context.expand( '${Data Source#POS}' )
+def pURSER = context.expand( '${Data Source#PURSER}' )
+def lEG_IPD_INDR = context.expand( '${Data Source#LEG_IPD_INDR}' )
+def map2=[:]
+def HMCode
+def paycode
+def float actual_dollar
+def float adjusted_dollar
+
+
+//context.testCase.getTestStepByName("Data Source").setStartRow("0")
+//context.testCase.getTestStepByName("Data Source").repositionAtStartRow( testRunner, context)
+//context.testCase.getTestStepByName("Data Source").next(testRunner,context)
+//def rowCount = context.testCase.getTestStepByName("Data Source").rowCount
+////rowCount=rowCount/2
+//log.info "rowCount-- " + rowCount
+//for (def i = 0; i <rowCount-1 ; i++) {
+//	def transcon = context.expand('${Properties#'+sEQ_NO+'}')
+//log.info("after mapping transcon is : "+ transcon)
+
+//switch(lEG_SEQ)
+//{
+	//case "777": 
+	if(dOM_INTL_CDE.contains('D'))
+	{
+		switch(lEG_SEQ)
+		{
+			
+		case "777": 
+		if(sCH_EQP.equals('82') && pOS.equals('1'))
+			{
+				log.info("into transcon")
+			if(transcon.equals(1))
+			{
+				log.info("after transcon")
+				if(pURSER.eqauls('Y'))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					actual_dollar=aCT_ACTUALTIME*paycode
+					adjusted_dollar=sKB_SCDULETIME*paycode
+					log.info(paycode+actual_dollar +adjusted_dollar)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=aCT_ACTUALTIME*paycode
+					adjusted_dollar=sKB_SCDULETIME*paycode
+					log.info(paycode+actual_dollar +adjusted_dollar)
+				}
+			}
+			else
+			{
+				log.info("in lead code")
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=aCT_ACTUALTIME*paycode
+					adjusted_dollar=sKB_SCDULETIME*paycode
+					log.info(paycode+actual_dollar +adjusted_dollar)
+			}
+			}	
+		else if(pOS.equals('2')|| pOS.equals('5') && transcon.equals(1)&& sCH_EQP.equals('82'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info(paycode)
+		}
+		else if(pOS.equals('2')||pOS.equals('4')||pOS.equals('5') && transcon.equals(1) && sCH_EQP.equals('82'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info(paycode)
+		}
+		break;
+		case "787":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('78') || sCH_EQP.equals('96')&& pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+	
+		else if(pOS.equals('2')&& sCH_EQP.equals('78') || sCH_EQP.equals('96'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "B772":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('83') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+	
+		else if(pOS.equals('2')|| pOS.equals('5') && sCH_EQP.equals('83'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "772M":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('AF') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		
+		else if(pOS.equals('2')||pOS.equals('5') && sCH_EQP.equals('AF'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "767":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('D0')||sCH_EQP.equals('D7') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('D0')||sCH_EQP.equals('D7') )
+		{
+					HMCode=212
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		
+		break;
+		case "757":
+		if(sCH_EQP.equals('38')||sCH_EQP.equals('39')|| sCH_EQP.equals('49')||sCH_EQP.equals('62')||sCH_EQP.equals('B0')||sCH_EQP.equals('BA') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=207
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=205
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=203
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('38')||sCH_EQP.equals('39')|| sCH_EQP.equals('49')||sCH_EQP.equals('62')||sCH_EQP.equals('B0')||sCH_EQP.equals('BA'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		
+		break;
+		case "737":
+		if(sCH_EQP.equals('25')||sCH_EQP.equals('45')|| sCH_EQP.equals('B9')||sCH_EQP.equals('CE') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+			
+		break;
+		case "330":
+		if(sCH_EQP.equals('43')||sCH_EQP.equals('98') && pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('43')||sCH_EQP.equals('98'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		
+		break;
+		case "321T":
+		if(sCH_EQP.equals('80')&& pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=206
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=205
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')|| pOS.equals('5') && transcon.equals(1)&& sCH_EQP.equals('80'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info(paycode)
+		}
+		else if(pOS.equals('2')||pOS.equals('4')||pOS.equals('5') && transcon.equals(1) && sCH_EQP.equals('80'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info(paycode)
+		}
+		
+		break;
+		case "321":
+		if(sCH_EQP.equals('75')||sCH_EQP.equals('76') ||sCH_EQP.equals('77') && pOS.equals('1'))
+			{
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "320":
+		if(sCH_EQP.equals('26')||sCH_EQP.equals('29') ||sCH_EQP.equals('42')||sCH_EQP.equals('67') ||sCH_EQP.equals('73') ||sCH_EQP.equals('91') ||sCH_EQP.equals('92')&& pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "S80":
+			if(sCH_EQP.equals('22')||sCH_EQP.equals('36') ||sCH_EQP.equals('50')||sCH_EQP.equals('EF')&& pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "E190":
+			if(sCH_EQP.equals('04')&& pOS.equals('1'))
+			{
+			
+			if(transcon.equals(1))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=201
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+	}
+	}
+	
+	else
+{
+		switch(lEG_SEQ)
+		{
+			
+		case "777":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('82') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')||pOS.equals('5')&& sCH_EQP.equals('82'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)
+		}
+		else if(pOS.equals('2')||pOS.equals('4')||pOS.equals('5') && sCH_EQP.equals('82'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)
+		}
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("SEQ_NO",sEQ_NO)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("LEG_SEQ",lEG_SEQ)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("ACT_ACTUALTIME",aCT_ACTUALTIME)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("SKB_SCDULETIME",sKB_SCDULETIME)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("FLT_NO",fLT_NO)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("actual_dollar",actual_dollar.toString())
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("adjusted_dollar",adjusted_dollar.toString())
+		break;
+		case "787":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('78') || sCH_EQP.equals('96')&& pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+	
+		else if(pOS.equals('2')||pOS.equals('5') && sCH_EQP.equals('78') || sCH_EQP.equals('96'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "B772":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('83') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)	
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)	
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)		
+					
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('83'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)	
+		}
+		else if(pOS.equals('2')|| pOS.equals('5') && sCH_EQP.equals('83'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					actual_dollar=Float.parseFloat(aCT_ACTUALTIME)*paycode
+					adjusted_dollar=Float.parseFloat(sKB_SCDULETIME)*paycode
+					log.info("pay code is :"+paycode +" & actual dollar amout is :"+actual_dollar+" & adjusted amount is :" +adjusted_dollar)
+					log.info("international non aft :"+paycode)	
+		}
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("SEQ_NO",sEQ_NO)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("LEG_SEQ",lEG_SEQ)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("ACT_ACTUALTIME",aCT_ACTUALTIME)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("SKB_SCDULETIME",sKB_SCDULETIME)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("FLT_NO",fLT_NO)
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("actual_dollar",actual_dollar.toString())
+		testRunner.testCase.testSteps["Properties"].setPropertyValue("adjusted_dollar",adjusted_dollar.toString())
+		break;
+		case "772M":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('AF') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		
+		else if(pOS.equals('2')||pOS.equals('5') && sCH_EQP.equals('AF'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "767":
+		log.info("in else loop for sEQ_NO :" + sEQ_NO)
+		if(sCH_EQP.equals('D0')||sCH_EQP.equals('D7') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('D0')||sCH_EQP.equals('D7') )
+		{
+					HMCode=212
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		else if(pOS.equals('5') && sCH_EQP.equals('D0')||sCH_EQP.equals('D7') )
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international non aft :"+paycode)
+		}
+		break;
+		case "757":
+		if(sCH_EQP.equals('38')||sCH_EQP.equals('39')|| sCH_EQP.equals('49')||sCH_EQP.equals('62')||sCH_EQP.equals('B0')||sCH_EQP.equals('BA') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=207
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=205
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=205
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('38')||sCH_EQP.equals('39')|| sCH_EQP.equals('49')||sCH_EQP.equals('62')||sCH_EQP.equals('B0')||sCH_EQP.equals('BA'))
+		{
+					HMCode=212
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		
+		break;
+		case "737":
+		if(sCH_EQP.equals('25')||sCH_EQP.equals('45')|| sCH_EQP.equals('B9')||sCH_EQP.equals('CE') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+			
+		break;
+		case "330":
+		if(sCH_EQP.equals('43')||sCH_EQP.equals('98') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		else if(pOS.equals('2')&& sCH_EQP.equals('43')||sCH_EQP.equals('98'))
+		{
+					HMCode=212
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		else if(pOS.equals('5')&& sCH_EQP.equals('43')||sCH_EQP.equals('98'))
+		{
+					HMCode=213
+					paycode=getPayRate(HMCode)
+					log.info("international aft :"+paycode)
+		}
+		break;
+		case "321T":
+		if(sCH_EQP.equals('80')&& pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "321":
+		if(sCH_EQP.equals('75')||sCH_EQP.equals('76') ||sCH_EQP.equals('77') && pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=204
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "320":
+		if(sCH_EQP.equals('26')||sCH_EQP.equals('29') ||sCH_EQP.equals('42')||sCH_EQP.equals('67') ||sCH_EQP.equals('73') ||sCH_EQP.equals('91') ||sCH_EQP.equals('92')&& pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "S80":
+			if(sCH_EQP.equals('22')||sCH_EQP.equals('36') ||sCH_EQP.equals('50')||sCH_EQP.equals('EF')&& pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=202
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+		case "E190":
+			if(sCH_EQP.equals('04')&& pOS.equals('1'))
+			{
+			
+			if(lEG_IPD_INDR.equals('1'))
+			{
+				if(pURSER.contains("Y"))
+				{
+					HMCode=209
+					paycode=getPayRate(HMCode)
+					log.info("international purser :"+paycode)
+				}
+				else
+				{
+					HMCode=208
+					paycode=getPayRate(HMCode)
+					log.info("international non purser :"+paycode)
+				}
+			}
+			else
+			{
+					HMCode=201
+					paycode=getPayRate(HMCode)
+					log.info("international lead code: "+paycode)	
+			}
+			
+		}
+		break;
+	}
+	
+	
+
+	}
+
+	//default: log.info("defaulter")
+//}
+
+//}
+def float getPayRate(int paycode)
+{
+
+MongoClientURI uri = new MongoClientURI(
+"mongodb+srv://snaga1725:FYnhDxDydlu6ns1f@cluster0.vigjens.mongodb.net/test");
+MongoClient mongoClient = new MongoClient(uri);
+MongoDatabase db = mongoClient.getDatabase("first");
+def collection = db.getCollection('cityinfo')
+log.info("collect is"+collection.toString())
+BasicDBObject query = new BasicDBObject("paycode":paycode)
+def projectionTest = collection.find(query).projection(Projections.fields(Projections.include("paycode"), Projections.excludeId()))
+log.info("projection value"+projectionTest);
+def cursor = projectionTest.iterator()
+String str;
+while(cursor.hasNext())
+{
+	def cur=cursor.next()
+	def rate=cur.get("paycode")
+	str = rate.replace('$','')
+	str=Float.parseFloat(str.trim())
+}
+return str;
+//	switch(paycode)
+//	{
+//		case 201: return 2.75
+//		case 202:return 2.50
+//		case 203: return 2.75
+//		case 204: return 3.25
+//		case 205: return 3.75
+//		case 206: return 4.75
+//		case 207: return 5.75
+//		case 208:return 6.50
+//		case 209:return 7.50
+//		case 212:return 1.75
+//		case 213:return 1.00
+//		
+//	}
+	
+}]]></script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasink" name="Data Sink" id="77001444-87dc-41c1-8e67-403fdd11cfd0">
+        <con:settings/>
+        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSink type="Excel">
+            <con:configuration>
+              <file/>
+              <outfile>C:/Users/91953/OneDrive/Documents/Naz/SQLDATA.xlsx</outfile>
+              <worksheet>Sheet2</worksheet>
+              <cell>A2</cell>
+              <evaluateFormulas>false</evaluateFormulas>
+              <append>false</append>
+            </con:configuration>
+          </con:dataSink>
+          <con:properties>
+            <con:property>
+              <con:name>SEQ_NO</con:name>
+              <con:value>${Properties#SEQ_NO}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>LEG_SEQ</con:name>
+              <con:value>${Properties#LEG_SEQ}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ACT_ACTUALTIME</con:name>
+              <con:value>${Properties#ACT_ACTUALTIME}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>SKB_SCDULETIME</con:name>
+              <con:value>${Properties#SKB_SCDULETIME}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>FLT_NO</con:name>
+              <con:value>${Properties#FLT_NO}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>actual_dollar</con:name>
+              <con:value>${Properties#actual_dollar}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>adjusted_dollar</con:name>
+              <con:value>${Properties#adjusted_dollar}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>TotalHours</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>TotalAmount</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>ActualFlown</con:name>
+              <con:value>=IF((${Properties#actual_dollar}>${Properties#adjusted_dollar}),${Properties#actual_dollar},${Properties#adjusted_dollar})</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="Data Source Loop" id="d4f36522-7dc1-4340-b843-1617fdd3de66">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>Data Source</dataSourceStep>
+          <targetStep>Groovy Script</targetStep>
+          <discardResults>false</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer>
+    <con:databaseConnection>
+      <con:name>mongo</con:name>
+      <con:driver>mongodb.jdbc.MongoDriver</con:driver>
+      <con:connectionString>mongodb+srv://snaga1725:FYnhDxDydlu6ns1f@cluster0.vigjens.mongodb.net/test?authMechanism=DEFAULT</con:connectionString>
+      <con:password/>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+  </con:databaseConnectionContainer>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
